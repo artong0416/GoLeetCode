@@ -104,3 +104,47 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return retv.Next
 }
 ```
+### 3. Longest Substring Without Repeating Characters
+
+Given a string, find the length of the **longest substring** without repeating characters.
+
+**Examples:**
+
+Given `"abcabcbb"`, the answer is `"abc"`, which the length is 3.
+
+Given `"bbbbb"`, the answer is `"b"`, with the length of 1.
+
+Given `"pwwkew"`, the answer is `"wke"`, with the length of 3. Note that the answer must be a **substring**, `"pwke"` is a *subsequence* and not a substring.
+
+**思路**
+
+使用选定的数据结构记录某字符最近一次出现的位置（可以是数组可以是map），index记录当前子串的起始位置，那么当前无重复子串长度为当前索引减去起始位置。如果某字符不是第一次出现，则将子串其实位置设置为该字符后一位。一次遍历。
+
+**代码**
+
+```go
+func lengthOfLongestSubstring(s string) int {
+	//保存某字符上一次出现的位置 未出现为 -1
+	loc := [256]int{}
+	for i := 0; i < 256; i++ {
+		loc[i] = -1
+	}
+	//当前子串起始位置
+	index := -1
+	//最大长度
+	max := 0
+	for i := 0; i < len(s); i++ {
+		//当前字符出现过，修改子串起始位置到该字符上一次出现的后一个位置（位置从-1开始）
+		if loc[s[i]] > index {
+			index = loc[s[i]]
+		}
+		//取最大值
+		if i-index > max {
+			max = i - index
+		}
+		//记录字符最近一次出现的位置
+		loc[s[i]] = i
+	}
+	return max
+}
+```
