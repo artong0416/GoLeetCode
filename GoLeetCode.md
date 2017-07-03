@@ -122,6 +122,8 @@ Given `"pwwkew"`, the answer is `"wke"`, with the length of 3. Note that the ans
 
 **代码**
 
+[Longest Substring Without Repeating Characters](https://github.com/artong0416/GoLeetCode/blob/master/lengthOfLongestSubstring.go"Longest Substring Without Repeating Characters")
+
 ```go
 func lengthOfLongestSubstring(s string) int {
 	//保存某字符上一次出现的位置 未出现为 -1
