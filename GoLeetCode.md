@@ -122,7 +122,7 @@ Given `"pwwkew"`, the answer is `"wke"`, with the length of 3. Note that the ans
 
 **代码**
 
-[Longest Substring Without Repeating Characters](https://github.com/artong0416/GoLeetCode/blob/master/lengthOfLongestSubstring.go"Longest Substring Without Repeating Characters")
+[Longest Substring Without Repeating Characters](https://github.com/artong0416/GoLeetCode/blob/master/lengthOfLongestSubstring.go "Longest Substring Without Repeating Characters")
 
 ```go
 func lengthOfLongestSubstring(s string) int {
@@ -187,7 +187,7 @@ The median is (2 + 3)/2 = 2.5
 
 **代码**
 
-[Median of Two Sorted Arrays](https://github.com/artong0416/GoLeetCode/blob/master/findMedianSortedArrays.go"Median of Two Sorted Arrays")
+[Median of Two Sorted Arrays](https://github.com/artong0416/GoLeetCode/blob/master/findMedianSortedArrays.go "Median of Two Sorted Arrays")
 
 ```go
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
