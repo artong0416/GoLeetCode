@@ -8,7 +8,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("排序算法汇总")
+	a := []int{1, 5, 8, 9, 74, 6, 4, 7, 5}
+	fmt.Println(bubbleSort(a))
 }
 
 /*
@@ -153,9 +154,9 @@ func partition(arr []int, left, right int) int {
 	swap(arr, pivot, index-1)
 	return index - 1
 }
-func swap(arr []int, i, j int) {
+/*func swap(arr []int, i, j int) {
 	arr[i], arr[j] = arr[j], arr[i]
-}
+}*/
 
 /*
   #堆排序
