@@ -7,7 +7,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(lengthOfLongestSubstring("aab"))
+	fmt.Println(lengthOfLongestSubstring("as"))
 }
 
 func lengthOfLongestSubstring(s string) int {
@@ -31,6 +31,31 @@ func lengthOfLongestSubstring(s string) int {
 		}
 		//记录字符最近一次出现的位置
 		loc[s[i]] = i
+	}
+	return max
+}
+
+//map解法
+func lengthOfLongestSubstring1(s string) int {
+
+	indexmap := make(map[uint8]int)
+	//当前子串起始位置
+	index := -1
+	//最大长度
+	max := 0
+	for i:=0 ; i<len(s); i++ {
+		indexmap[s[i]] = -1
+	}
+	for i:=0 ; i<len(s); i++ {
+		//出现过
+		if (indexmap[s[i]])  > index {
+			index = indexmap[s[i]]
+		}
+		//取最大
+		if i - index  > max {
+			max = i - index
+		}
+		indexmap[s[i]] = i
 	}
 	return max
 }
